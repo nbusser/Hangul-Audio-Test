@@ -9,7 +9,7 @@ def main():
     command = ''
     while command != 'q':
         command = ''
-        hangul = get_random_hangul()
+        hangul, transcript = get_random_hangul()
 
         tmp_file = NamedTemporaryFile()
         voice = tmp_file.name
@@ -17,7 +17,7 @@ def main():
 
         while command != 'y' and command != 'q':
             os.system('clear')
-            print("Response:", hangul)
+            print("Response:", hangul, transcript)
             print("Press enter to repeat")
             print("Press y to go to the next one")
             print("Press q to quit")
